@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Reem Bahathiq: UX Strategy & Research and Human-Centered AI. Case studies from the Ministry of Hajj & Umrah, Downtown App and AI research.">
+<meta property="og:title" content="Reem Bahathiq | UX Strategy & Research">
+<meta property="og:description" content="UX strategy, UX research and human-centered AI. Case studies and work from the field.">
+<meta property="og:image" content="img/logo-full.png">
+<meta name="theme-color" content="#1B1030">
+<link rel="icon" type="image/png" href="img/logo-mark.png">
+<title>Reem Bahathiq Portfolio</title>
+<script>document.documentElement.lang="en";document.documentElement.dir="ltr";</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: Arabic-first RTL personal portfolio. Dark aubergine hero band, light lavender body, purple accent; project index then detailed blocks with large word-marks. Single committed palette (works on either host theme). */
+:root{
+  --ink:#1B1030; --ink-2:#2A1A48; --paper:#F7F5FB; --surface:#FFFFFF; --fg:#1B1030; --muted:#5E5674; --line:#E3DDF0;
+  --accent:#6B3FD4; --gold:#D6B26C; --accent-2:#B9A2F5; --soft:#EEE8FB; --on-ink:#F3EFFC; --on-ink-muted:#B7ACD0;
+  --display:"Readex Pro","IBM Plex Sans Arabic","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans Arabic","Readex Pro","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--fg);font-family:var(--body);font-size:16.5px;line-height:1.75}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--ink)}
+html[lang="ar"] .en, html[lang="en"] .ar{display:none!important}
+.in{max-width:1120px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left,0px));padding-right:max(20px, env(safe-area-inset-right,0px))}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:6px}
+h1,h2,h3,h4{font-family:var(--display);margin:0;line-height:1.2;text-wrap:balance}
+.skip{position:absolute;inset-inline-start:-999px;top:8px;background:var(--surface);color:var(--fg);padding:8px 12px;border-radius:8px;z-index:30}
+.skip:focus{inset-inline-start:12px}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.pill{display:inline-block;font-size:13.5px;padding:4px 12px;border-radius:999px;background:var(--soft);color:var(--ink);line-height:1.6}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+
+/* Header */
+.top{background:var(--ink);color:var(--on-ink);position:sticky;top:env(safe-area-inset-top,0px);z-index:20;border-bottom:1px solid var(--ink-2)}
+.top .in{display:flex;align-items:center;gap:20px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:500}
+.mark{width:34px;height:34px;flex:none;object-fit:contain}
+.nav{display:flex;gap:22px;margin-inline-start:auto;font-size:15px}
+.nav a{text-decoration:none;color:var(--on-ink-muted)}
+.nav a:hover{color:var(--on-ink)}
+.lang{background:none;border:1px solid var(--ink-2);color:var(--on-ink);border-radius:999px;padding:5px 12px;font:500 13px var(--mono);cursor:pointer}
+.cta{background:var(--accent);color:#fff;text-decoration:none;border-radius:999px;padding:8px 16px;font-size:14.5px;white-space:nowrap}
+@media (max-width:760px){.nav{display:none}.lang{margin-inline-start:auto}}
+
+/* Hero */
+.hero{background:var(--ink);color:var(--on-ink)}
+.hero .in{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);gap:48px;align-items:center;padding-block:72px 88px}
+.hero h1{font-size:clamp(46px,8vw,92px);font-weight:700;letter-spacing:-.01em}
+.hero h1 i{font-style:normal;color:var(--gold)}
+.tagline{font-family:var(--display);font-size:clamp(20px,2.8vw,28px);font-weight:500;margin-top:18px;color:var(--on-ink)}
+.tagline span{color:var(--accent-2)}
+.hero p{color:var(--on-ink-muted);max-width:56ch;margin:18px 0 0;font-size:17.5px}
+.hero .pills{margin-top:24px}
+.hero .pill{background:var(--ink-2);color:var(--on-ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;margin-top:30px;background:var(--on-ink);color:var(--ink);text-decoration:none;border-radius:999px;padding:12px 22px;font-weight:600}
+.portrait{position:relative;aspect-ratio:4/5;max-width:100%;border-radius:22px;overflow:hidden;background:linear-gradient(160deg,#4B2A93,#24133F 70%);display:grid;place-items:center}
+.portrait .logo{width:58%;height:auto;margin-bottom:28px}
+.portrait .cap b{color:var(--gold)}
+.portrait .mono{font-family:var(--display);font-weight:700;font-size:clamp(90px,14vw,150px);color:rgba(243,239,252,.16);letter-spacing:-.04em}
+.portrait .cap{position:absolute;inset-inline:18px;bottom:16px;display:flex;justify-content:space-between;gap:10px;color:var(--on-ink);direction:ltr}
+.portrait .cap b{font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.14em}
+.portrait .cap span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--on-ink-muted)}
+@media (max-width:820px){.hero .in{grid-template-columns:1fr;padding-block:48px 64px}.portrait{max-width:380px}}
+
+/* Figures */
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:-44px;position:relative}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.fig b{display:block;font-family:var(--mono);font-weight:500;font-size:clamp(22px,3vw,30px);color:var(--accent);direction:ltr;text-align:start;font-variant-numeric:tabular-nums}
+html[lang="ar"] .fig b{text-align:right}
+.fig span{font-size:14px;color:var(--muted);line-height:1.5;display:block;margin-top:4px}
+@media (max-width:820px){.figs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Sections */
+section{padding-block:96px 0}
+.head{display:grid;gap:10px;margin-bottom:36px;max-width:680px}
+.head .label{color:var(--accent)}
+.head h2{font-size:clamp(30px,4.4vw,46px);font-weight:700}
+.head p{margin:0;color:var(--muted);font-size:17px}
+
+/* Work index */
+.index{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:900px){.index{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.index{grid-template-columns:1fr}}
+.idx{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-decoration:none;transition:border-color .15s,transform .15s}
+.idx:hover{border-color:var(--accent);transform:translateY(-2px)}
+.idx h3{font-size:17px;font-weight:500}
+.idx small{display:block;color:var(--muted);font-size:13.5px}
+.arrow{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--soft);color:var(--accent);font-size:16px}
+@media (prefers-reduced-motion:reduce){.idx{transition:none}.idx:hover{transform:none}}
+
+/* Project blocks */
+.projects{display:grid;gap:20px;margin-top:40px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,4vw,40px);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(20px,4vw,48px);scroll-margin-top:90px}
+@media (max-width:820px){.proj{grid-template-columns:1fr}}
+.word{display:grid;align-content:start;gap:8px}
+.word strong{font-family:var(--display);font-weight:700;font-size:clamp(44px,6.5vw,72px);line-height:1;color:var(--accent);letter-spacing:-.01em}
+.word .label{color:var(--muted)}
+.word .stat{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);display:grid;gap:2px}
+.word .stat b{font-family:var(--mono);font-weight:500;font-size:26px;color:var(--ink);direction:ltr;text-align:start;font-variant-numeric:tabular-nums}
+html[lang="ar"] .word .stat b{text-align:right}
+.word .stat span{font-size:14px;color:var(--muted)}
+.body h3{font-size:clamp(21px,2.6vw,26px);font-weight:700}
+.body .meta{font-size:14px;color:var(--muted);margin-top:6px}
+.body p{margin:14px 0 0;max-width:62ch}
+.body ul{margin:12px 0 0;padding-inline-start:20px}
+.body li{margin-top:6px}
+.body li::marker{color:var(--accent)}
+.body .pills{margin-top:20px}
+.out{margin-top:16px;background:var(--soft);border-radius:12px;padding:12px 16px;font-size:15.5px}
+.out b{color:var(--accent)}
+
+/* Field */
+.field{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:820px){.field{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.shot{aspect-ratio:4/3;max-width:100%;border-radius:14px;overflow:hidden;position:relative;background:var(--ink-2);color:var(--on-ink);display:flex;align-items:flex-end;padding:14px}
+.shot:nth-child(3n+2){background:#3D2471}.shot:nth-child(3n){background:#55339A}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shot div{position:relative;display:grid;gap:2px}
+.shot b{font-family:var(--display);font-weight:500;font-size:15.5px;line-height:1.35}
+.shot span{font-family:var(--mono);font-size:12px;color:var(--on-ink-muted);direction:ltr;text-align:start}
+.stations{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:44px}
+@media (max-width:820px){.stations{grid-template-columns:1fr}}
+.station{border-top:2px solid var(--accent);padding-top:16px}
+.station h4{font-size:19px;font-weight:700}
+.station p{margin:8px 0 0;color:var(--muted)}
+
+
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:820px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.gallery{grid-template-columns:1fr}}
+.gallery .ph{position:relative;display:block;aspect-ratio:4/3;max-width:100%;border-radius:14px;overflow:hidden;background:var(--ink-2);text-decoration:none}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.gallery .ph:hover img{transform:scale(1.04)}
+.gallery .cap{position:absolute;inset:auto 0 0 0;padding:40px 14px 12px;background:linear-gradient(transparent,rgba(27,16,48,.92));color:var(--on-ink);display:grid;gap:2px}
+.gallery .cap b{font-family:var(--display);font-weight:500;font-size:14.5px;line-height:1.35}
+.gallery .cap small{font-family:var(--mono);font-size:11.5px;color:var(--gold);letter-spacing:.06em}
+@media (prefers-reduced-motion:reduce){.gallery img{transition:none}.gallery .ph:hover img{transform:none}}
+.sub{font-size:20px;font-weight:700;margin:48px 0 16px}
+.letters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:640px){.letters{grid-template-columns:1fr}}
+.letters a{display:grid;gap:8px;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px}
+.letters img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:8px;display:block;max-width:100%}
+.letters span{font-size:14px;color:var(--muted);padding:0 4px 4px;line-height:1.45}
+.awards{list-style:none;margin:0;padding:0;max-width:820px}
+.awards li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:14px;padding-block:11px;border-top:1px solid var(--line)}
+.awards li:last-child{border-bottom:1px solid var(--line)}
+.awards li>span:first-child{font-family:var(--mono);color:var(--accent)}
+figure.ph{margin:20px 0 0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+figure.ph img{display:block;width:100%;height:auto;max-width:100%}
+figure.ph figcaption{font-size:13.5px;color:var(--muted);padding:8px 12px;background:var(--soft)}
+
+/* Motion */
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-30%;background:radial-gradient(40% 40% at 70% 40%,rgba(107,63,212,.35),transparent 70%),radial-gradient(30% 30% at 20% 80%,rgba(214,178,108,.12),transparent 70%);pointer-events:none}
+.hero .in{position:relative}
+@media (prefers-reduced-motion:no-preference){
+  .hero::before{animation:drift 18s ease-in-out infinite alternate}
+  @keyframes drift{to{transform:translate(-6%,4%) rotate(8deg)}}
+  .hero h1,.hero .tagline,.hero p,.hero .pills,.hero .btn{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .hero .tagline{animation-delay:.12s}.hero p{animation-delay:.22s}.hero .pills{animation-delay:.32s}.hero .btn{animation-delay:.42s}
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  .portrait{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+  .portrait .logo{animation:draw 1.6s .5s cubic-bezier(.6,0,.2,1) both,float 6s 2.2s ease-in-out infinite;filter:drop-shadow(0 0 18px rgba(214,178,108,.25))}
+  @keyframes draw{from{clip-path:inset(0 100% 0 0);opacity:.2}to{clip-path:inset(0 0 0 0);opacity:1}}
+  @keyframes float{50%{transform:translateY(-8px)}}
+  .fig{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .fig:nth-child(1){animation-delay:.5s}.fig:nth-child(2){animation-delay:.6s}.fig:nth-child(3){animation-delay:.7s}.fig:nth-child(4){animation-delay:.8s}
+  @supports (animation-timeline: view()){
+    .proj,.idx,.gallery .ph,.svc>div,.station,.letters a,.awards li{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+    @keyframes reveal{from{opacity:0;transform:translateY(40px) scale(.98)}to{opacity:1;transform:none}}
+  }
+  .btn,.cta,.copy{transition:transform .2s,box-shadow .2s}
+  .btn:hover,.cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(107,63,212,.35)}
+  .proj{transition:box-shadow .3s,border-color .3s}
+  .proj:hover{border-color:var(--accent-2);box-shadow:0 18px 40px -20px rgba(27,16,48,.35)}
+  .word strong{background:linear-gradient(90deg,var(--accent),#9D7BF0,var(--accent));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 6s linear infinite}
+  @keyframes sheen{to{background-position:-200% 0}}
+}
+.top{transition:background .3s}
+.top.scrolled{background:rgba(27,16,48,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+
+/* Services */
+.svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:900px){.svc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.svc{grid-template-columns:1fr}}
+.svc div{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
+.svc h4{font-size:18px;font-weight:700}
+.svc p{margin:8px 0 0;color:var(--muted);font-size:15.5px}
+
+/* Early work */
+.early{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:820px){.early{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.early{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{background:var(--ink);color:var(--on-ink);margin-top:96px}
+.contact .in{padding-block:80px;display:grid;gap:18px;justify-items:center;text-align:center}
+.contact h2{font-size:clamp(32px,5vw,52px);font-weight:700}
+.contact p{margin:0;color:var(--on-ink-muted);max-width:52ch}
+.rows{display:grid;gap:10px;width:min(520px,100%);margin-top:12px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid var(--ink-2);border-radius:14px;padding:14px 18px;text-decoration:none;background:rgba(255,255,255,.02)}
+.row:hover{border-color:var(--accent-2)}
+.row span{color:var(--on-ink-muted);font-size:14px}
+.row b{font-family:var(--mono);font-weight:500;font-size:14.5px;direction:ltr;user-select:all;overflow-wrap:anywhere}
+.copy{background:var(--accent);color:#fff;border:0;border-radius:999px;padding:6px 14px;font:500 13px var(--body);cursor:pointer}
+footer{background:var(--ink);color:var(--on-ink-muted);border-top:1px solid var(--ink-2)}
+footer .in{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:22px;font-size:14px}
+footer a{text-decoration:none;color:var(--on-ink)}
+</style>
+
+</head>
+<body>
+<a class="skip" href="#main"><span class="ar">تخطَّ إلى المحتوى</span><span class="en">Skip to content</span></a>
+
+<header class="top">
+  <div class="in">
+    <a class="brand" href="#top" aria-label="Reem Bahathiq">
+      <img class="mark" src="img/logo-mark.png" alt="">
+      <span class="ar">ريم باحاذق</span><span class="en">Reem Bahathiq</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#work"><span class="ar">أعمالي</span><span class="en">Work</span></a>
+      <a href="#field"><span class="ar">من الميدان</span><span class="en">From the field</span></a>
+      <a href="#skills"><span class="ar">كيف أضيف لفريقك</span><span class="en">What I bring</span></a>
+    </nav>
+    <button class="lang" id="langBtn" type="button" aria-label="Switch language">عربي</button>
+    <a class="cta" href="#contact"><span class="ar">تواصل معي ↓</span><span class="en">Contact ↓</span></a>
+  </div>
+</header>
+
+<main id="main">
+<div class="hero" id="top">
+  <div class="in">
+    <div>
+      <h1><span class="ar">ريم باحاذق<i>.</i></span><span class="en">Reem Bahathiq<i>.</i></span></h1>
+      <div class="tagline">
+        <span class="ar">أصمّم الخدمات الرقمية<br>حول <span>الإنسان</span> اللي يستخدمها.</span>
+        <span class="en">I design digital services<br>around the <span>people</span> who use them.</span>
+      </div>
+      <p class="ar">متخصصة في استراتيجية وأبحاث تجربة المستخدم والذكاء الاصطناعي المتمحور حول الإنسان، بخبرة 8 سنوات. في وزارة الحج والعمرة أقود دراسات رحلة المستخدم واختبارات قابلية الاستخدام وتصميم الخدمات لبرامج وطنية تخدم ملايين الحجاج، ومعي ماجستير في الذكاء الاصطناعي.</p>
+      <p class="en">UX strategy, UX research and human-centered AI, with 8 years of experience. At the Ministry of Hajj &amp; Umrah I lead user-journey research, usability studies and service design for national programs that serve millions of pilgrims, backed by an M.Sc. in Artificial Intelligence.</p>
+      <div class="pills">
+        <span class="pill"><span class="ar">استراتيجية تجربة المستخدم</span><span class="en">UX Strategy</span></span>
+        <span class="pill"><span class="ar">أبحاث المستخدم</span><span class="en">UX Research</span></span>
+        <span class="pill"><span class="ar">ذكاء اصطناعي متمحور حول الإنسان</span><span class="en">Human-Centered AI</span></span>
+      </div>
+      <a class="btn" href="#work"><span class="ar">اكتشف أعمالي</span><span class="en">See my work</span> <span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="portrait" aria-label="Reem Bahathiq logo">
+      <img class="logo" src="img/logo-mark.png" alt="">
+      <div class="cap"><b>REEM BAHATHIQ</b><span>PERSONAL PORTFOLIO</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="in">
+  <div class="figs">
+    <div class="fig"><b>2M+</b><span class="ar">حاج سنوياً يحملون بطاقة نسك اللي أدرت برنامجها</span><span class="en">pilgrims a year carry the Nusuk Card I managed</span></div>
+    <div class="fig"><b>150</b><span class="ar">مشارك في المقابلات واختبارات الاستخدام لتطبيق Downtown</span><span class="en">participants in Downtown App interviews and usability tests</span></div>
+    <div class="fig"><b>7d → 2m</b><span class="ar">من 7 أيام إلى دقيقتين لتجهيز ملفات المؤشر</span><span class="en">index file setup, from 7 days to 2 minutes</span></div>
+    <div class="fig"><b>Top 7</b><span class="ar">على مستوى المملكة في مؤشر قياس التحول الرقمي 2025</span><span class="en">nationally, Digital Transformation Measurement Index 2025</span></div>
+  </div>
+</div>
+
+<section id="work">
+  <div class="in">
+    <div class="head">
+      <div class="label"><span class="ar">أعمالي</span><span class="en">Selected work</span></div>
+      <h2><span class="ar">مشاريع اشتغلت عليها.</span><span class="en">Projects I've led.</span></h2>
+      <p><span class="ar">من برامج حكومية وطنية إلى تطبيقات تجارية، وفي كل مشروع البداية من المستخدم.</span><span class="en">From national government programs to commercial apps. Every one starts with the user.</span></p>
+    </div>
+
+    <div class="index">
+      <a class="idx" href="#p-journeys"><div><h3><span class="ar">رحلات الحجاج والمعتمرين</span><span class="en">Pilgrim journeys</span></h3><small><span class="ar">أبحاث رحلة المستخدم</span><span class="en">Journey research</span></small></div><span class="arrow" aria-hidden="true">↙</span></a>
+      <a class="idx" href="#p-website"><div><h3><span class="ar">موقع الوزارة</span><span class="en">Ministry website</span></h3><small><span class="ar">بحث وإعادة بناء</span><span class="en">Research and rebuild</span></small></div><span class="arrow" aria-hidden="true">↙</span></a>
+      <a class="idx" href="#p-nusuk"><div><h3><span class="ar">بطاقة نسك</span><span class="en">Nusuk Card</span></h3><small><span class="ar">برنامج وطني</span><span class="en">National program</span></small></div><span class="arrow" aria-hidden="true">↙</span></a>
+      <a class="idx" href="#p-access"><div><h3><span class="ar">الإتاحة لذوي الإعاقة</span><span class="en">Accessibility</span></h3><small><span class="ar">تصميم شامل</span><span class="en">Inclusive design</span></small></div><span class="arrow" aria-hidden="true">↙</span></a>
+      <a class="idx" href="#p-downtown"><div><h3>Downtown App</h3><small><span class="ar">تجربة مستخدم متكاملة</span><span class="en">End-to-end UX</span></small></div><span class="arrow" aria-hidden="true">↙</span></a>
+      <a class="idx" href="#p-ai"><div><h3><span class="ar">المساعد الذكي والأتمتة</span><span class="en">AI assistant and automation</span></h3><small><span class="ar">ذكاء اصطناعي تطبيقي</span><span class="en">Applied AI</span></small></div><span class="arrow" aria-hidden="true">↙</span></a>
+    </div>
+
+    <div class="projects">
+      <article class="proj" id="p-journeys">
+        <div class="word"><strong><span class="ar">رحلة</span><span class="en">Journeys</span></strong><span class="label">PILGRIM JOURNEYS</span>
+          <div class="stat"><b>2</b><span><span class="ar">رحلتان كاملتان: الحاج والمعتمر الدولي</span><span class="en">end-to-end journeys: Hajj and international Umrah</span></span></div></div>
+        <div class="body">
+          <h3><span class="ar">رحلة الحاج والمعتمر عبر المنصات الرقمية</span><span class="en">Pilgrim journeys across Saudi digital platforms</span></h3>
+          <div class="meta"><span class="ar">وزارة الحج والعمرة · 2024 حتى الآن · قائدة البحث</span><span class="en">Ministry of Hajj &amp; Umrah · 2024 – present · Research lead</span></div>
+          <p class="ar">المعتمر الدولي يمر بأكثر من منصة رقمية سعودية قبل ما يوصل نسك. هذي الدراسات تشوف التجربة من جهة الحاج والمعتمر نفسه.</p>
+          <p class="en">International pilgrims pass through several Saudi digital platforms before they reach Nusuk. These studies looked at that experience from the pilgrim's side.</p>
+          <ul class="ar"><li>قدت دراسة تجربة الحاج مع بطاقة نسك.</li><li>رسمت رحلة المعتمر الدولي عبر المنصات الرقمية السعودية وصولاً إلى نسك.</li><li>أجريت دراسات تجربة مستخدم لمنصة رسل وموقع مجمع الملك فهد لطباعة المصحف الشريف.</li></ul>
+          <ul class="en"><li>Led the study of the Hajj pilgrim's experience with the Nusuk Card.</li><li>Mapped the international Umrah pilgrim's journey across Saudi platforms to Nusuk.</li><li>Ran UX studies for the Rasel platform and the King Fahd Qur'an Printing Complex website.</li></ul>
+          <div class="pills"><span class="pill">Journey Mapping</span><span class="pill">UX Research</span><span class="pill">Service Design</span></div>
+        </div>
+      </article>
+
+      <article class="proj" id="p-website">
+        <div class="word"><strong><span class="ar">موقع</span><span class="en">Website</span></strong><span class="label">MINISTRY WEBSITE</span>
+          <div class="stat"><b>4</b><span><span class="ar">أساليب بحث في مشروع واحد</span><span class="en">research methods behind one redesign</span></span></div></div>
+        <div class="body">
+          <h3><span class="ar">إعادة بناء موقع الوزارة وبوابة Help Me</span><span class="en">Ministry website and Help Me portal</span></h3>
+          <div class="meta"><span class="ar">وزارة الحج والعمرة · قائدة البحث وإعادة التطوير</span><span class="en">Ministry of Hajj &amp; Umrah · Research and redevelopment lead</span></div>
+          <ul class="ar"><li>قدت أبحاث المستخدمين وإعادة التطوير الكاملة لموقع الوزارة.</li><li>أجريت البحث لبوابة Help Me للدعم التقني والأمن السيبراني.</li><li>جمعت بين أربعة أساليب عشان كل نتيجة تتأكد من مصدر ثاني.</li></ul>
+          <ul class="en"><li>Led user research and the full redevelopment of the ministry website.</li><li>Ran research for the Help Me technical and cybersecurity portal.</li><li>Combined four methods so each finding could be checked against another source.</li></ul>
+          <div class="pills"><span class="pill">Surveys</span><span class="pill">Unmoderated Usability Tests</span><span class="pill">User Reviews</span><span class="pill">Interviews</span></div>
+        </div>
+      </article>
+
+      <article class="proj" id="p-nusuk">
+        <div class="word"><strong><span class="ar">نسك</span><span class="en">Nusuk</span></strong><span class="label">NUSUK CARD</span>
+          <div class="stat"><b>2M+</b><span><span class="ar">حاج سنوياً</span><span class="en">pilgrims a year</span></span></div></div>
+        <div class="body">
+          <h3><span class="ar">برنامج بطاقة نسك الوطني</span><span class="en">Nusuk Card national program</span></h3>
+          <div class="meta"><span class="ar">وزارة الحج والعمرة · 2024 – 2026 · مديرة البرنامج 2024، والمسار الاستشاري 2025</span><span class="en">Ministry of Hajj &amp; Umrah · 2024 – 2026 · Program manager (2024), advisory track (2025)</span></div>
+          <p class="ar">بطاقة ذكية تصدر لأكثر من مليوني حاج سنوياً، فيها بيانات الهوية والصحة والموقع ومجموعة الحج، تساعد رجال الأمن في إرشاد الحجاج.</p>
+          <p class="en">A smart card issued to more than 2 million pilgrims a year, carrying identity, health, location and Hajj group data so security personnel can guide pilgrims.</p>
+          <ul class="ar"><li>كتبت الشروط المرجعية وحللت المتطلبات.</li><li>تحققت من قابلية الاستخدام وشاركت في تصميم البطاقة والموقع والتطبيق وفق كود المنصات الرقمية.</li><li>تابعت التحديات مع المشغّل، وقدت المسار الاستشاري 2025 حتى الدروس المستفادة.</li></ul>
+          <ul class="en"><li>Wrote the terms of reference and ran the requirements analysis.</li><li>Validated usability and contributed to the card, website and app design, compliant with the DGA Platform Code.</li><li>Followed up challenges with the operator, then led the 2025 advisory track through to lessons learned.</li></ul>
+          <div class="out"><b><span class="ar">النتيجة:</span><span class="en">Result:</span></b> <span class="ar">شهادة تميز لبطاقة نسك 2024، وطرح حل قارئ البطاقة كنموذج ابتكاري لجائزة الحكومة الرقمية الخليجية 2026.</span><span class="en">Certificate of Excellence for the Nusuk Card (2024); card-reader solution positioned as an innovation model for the GCC Digital Government Award 2026.</span></div>
+          <figure class="ph"><img src="img/nusuk-team.jpg" alt="Nusuk Card project team in front of the card journey wall" loading="lazy"><figcaption><span class="ar">فريق مشروع بطاقة نسك أمام جدار رحلة البطاقة</span><span class="en">The Nusuk Card project team at the card journey wall</span></figcaption></figure>
+          <div class="pills"><span class="pill">Requirements Analysis</span><span class="pill">Usability Validation</span><span class="pill">DGA Platform Code</span></div>
+        </div>
+      </article>
+
+      <article class="proj" id="p-access">
+        <div class="word"><strong><span class="ar">إتاحة</span><span class="en">Access</span></strong><span class="label">ACCESSIBILITY</span>
+          <div class="stat"><b>1st</b><span><span class="ar">الاحتياج أولاً، والتقنية بعده</span><span class="en">user needs first, technology second</span></span></div></div>
+        <div class="body">
+          <h3><span class="ar">حلول الإتاحة لذوي الإعاقة</span><span class="en">Accessibility for people with disabilities</span></h3>
+          <div class="meta"><span class="ar">وزارة الحج والعمرة · قائدة الدراسة والاختيار</span><span class="en">Ministry of Hajj &amp; Umrah · Research and selection lead</span></div>
+          <ul class="ar"><li>درست احتياجات الأشخاص ذوي الإعاقة قبل النظر في أي أداة.</li><li>قيّمت التقنيات المساعدة مقابل هذي الاحتياجات وقيود الوزارة.</li><li>طبّقت الحل الأنسب للمستخدمين وللوزارة.</li></ul>
+          <ul class="en"><li>Studied the needs of people with disabilities before looking at any tool.</li><li>Evaluated assistive technologies against those needs and the ministry's constraints.</li><li>Deployed the solution that best fit both users and the ministry.</li></ul>
+          <div class="pills"><span class="pill">Needs Assessment</span><span class="pill">Accessibility</span><span class="pill">Technology Evaluation</span></div>
+        </div>
+      </article>
+
+      <article class="proj" id="p-downtown">
+        <div class="word"><strong>Downtown</strong><span class="label">E-COMMERCE APP</span>
+          <div class="stat"><b>≈10–15%</b><span><span class="ar">ارتفاع تقديري في إتمام الشراء</span><span class="en">estimated rise in purchase completion</span></span></div></div>
+        <div class="body">
+          <h3><span class="ar">Downtown: المستخدم يلقى طريقه ويكمّل الشراء</span><span class="en">Downtown App: helping shoppers find their way</span></h3>
+          <div class="meta"><span class="ar">2023 · عن بُعد · عقد 4 شهور · مصممة UX/UI</span><span class="en">2023 · Remote · 4-month contract · UX/UI Designer</span></div>
+          <p class="ar"><b>المشكلة:</b> المستخدمين كانوا يضيعون داخل التطبيق ويقفلون الصفحات قبل ما يكملون الشراء.</p>
+          <p class="en"><b>Problem:</b> users got lost in the app and closed pages before finishing a purchase.</p>
+          <ul class="ar"><li>أجريت مقابلات واختبارات قابلية استخدام مع 150 مشارك.</li><li>رسمت رحلات المستخدم وحددت النقاط اللي يضيع فيها.</li><li>أعدت تصميم التنقل والواجهة مع اختبار النماذج الأولية خطوة بخطوة.</li></ul>
+          <ul class="en"><li>Ran interviews and usability tests with 150 participants.</li><li>Mapped user journeys to find exactly where people got lost.</li><li>Redesigned navigation and the interface, testing prototypes along the way.</li></ul>
+          <div class="out"><b><span class="ar">النتيجة:</span><span class="en">Result:</span></b> <span class="ar">قلّ إغلاق الصفحات، وارتفعت نسبة إتمام الشراء بما يقارب 10–15%.</span><span class="en">Fewer abandoned pages, and purchase completion rose by an estimated 10–15%.</span></div>
+          <div class="pills"><span class="pill">Interviews</span><span class="pill">Usability Testing</span><span class="pill">Information Architecture</span><span class="pill">Figma</span></div>
+        </div>
+      </article>
+
+      <article class="proj" id="p-ai">
+        <div class="word"><strong><span class="ar">أتمتة</span><span class="en">Automate</span></strong><span class="label">AI &amp; AUTOMATION</span>
+          <div class="stat"><b>7d → 2m</b><span><span class="ar">وقت تجهيز الملفات</span><span class="en">file setup time</span></span></div>
+          <div class="stat"><b>+25</b><span><span class="ar">نقطة في مؤشر تبني التقنيات الناشئة (إلى 79)</span><span class="en">points on the Emerging Technology Adoption Index (to 79)</span></span></div></div>
+        <div class="body">
+          <h3><span class="ar">مساعد ذكي وأتمتة لأعمال القياس الوطني</span><span class="en">AI assistant and automation for national measurement</span></h3>
+          <div class="meta"><span class="ar">وزارة الحج والعمرة · 2024 حتى الآن · تصميم وبناء</span><span class="en">Ministry of Hajj &amp; Umrah · 2024 – present · Designer and builder</span></div>
+          <p class="ar">12 إدارة تجهز ملفات الأدلة لمؤشرات النضج الرقمي، والشغل كان يدوي وبطيء ومتوزع بين المجلدات والإيميلات.</p>
+          <p class="en">Twelve departments prepare evidence files for national digital-maturity indices. The work was manual, slow and scattered across folders and email.</p>
+          <ul class="ar"><li>بنيت أداة أتمتة تنشئ هيكل الملفات الكامل لكل معيار في المؤشر.</li><li>أطلقت مساعد قياس ذكي (Copilot Studio وPower Automate) يتحقق من الأدلة ويراجع التسليمات ويجاوب على أسئلة الموظفين، شغّال من 2026.</li><li>جمعت كل شي في منصة SharePoint وحدة لـ 12 إدارة، مع لوحات Power BI للقيادات.</li><li>صممت لوحة صدارة للإدارات حوّلت التسليم إلى منافسة ودّية.</li></ul>
+          <ul class="en"><li>Built an automation tool that generates the full file structure for each index standard.</li><li>Launched a measurement AI assistant (Copilot Studio, Power Automate) that validates evidence, reviews submissions and answers employees' questions. Live since 2026.</li><li>Brought everything into one SharePoint platform for 12 departments, with executive Power BI dashboards.</li><li>Designed a department leaderboard that turned submission into a friendly competition.</li></ul>
+          <div class="out"><b><span class="ar">النتيجة:</span><span class="en">Result:</span></b> <span class="ar">قلّت المراجعة اليدوية، وإحدى الإدارات صارت تسلّم في أول أسبوع بدل آخر الشهر، والوزارة ضمن أفضل 7 جهات على مستوى المملكة 2025.</span><span class="en">Less manual review, one department moved from month-end to first-week submissions, and the ministry reached Top 7 nationally in 2025.</span></div>
+          <div class="pills"><span class="pill">AI Use-Case Design</span><span class="pill">Copilot Studio</span><span class="pill">Power Automate</span><span class="pill">Power BI</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="field">
+  <div class="in">
+    <div class="head">
+      <div class="label"><span class="ar">من الميدان</span><span class="en">From the field</span></div>
+      <h2><span class="ar">جوائز ومنصات ولحظات.</span><span class="en">Awards, stages and moments.</span></h2>
+    </div>
+    <div class="gallery">
+      <a class="ph" href="img/gcc-recognition.jpg" target="_blank" rel="noopener"><img src="img/gcc-recognition.jpg" alt="Honored after the ministry won the GCC Digital Government Award" loading="lazy"><span class="cap"><b><span class="ar">تكريم بعد فوز الوزارة بجائزة الحكومة الرقمية الخليجية</span><span class="en">Honored after the ministry won the GCC Digital Government Award</span></b><small>2026</small></span></a>
+      <a class="ph" href="img/minister-honor.jpg" target="_blank" rel="noopener"><img src="img/minister-honor.jpg" alt="Minister's recognition ceremony for national digital indices" loading="lazy"><span class="cap"><b><span class="ar">حفل تكريم معالي الوزير للمتميزين في المؤشرات الوطنية</span><span class="en">Minister's recognition ceremony for national digital indices</span></b><small>2026</small></span></a>
+      <a class="ph" href="img/expo-talk.jpg" target="_blank" rel="noopener"><img src="img/expo-talk.jpg" alt="Leading a workshop on emerging technologies at Hajj Expo" loading="lazy"><span class="cap"><b><span class="ar">تقديم ورشة عن التقنيات الناشئة في مؤتمر ومعرض الحج</span><span class="en">Leading a workshop on emerging technologies at Hajj Expo</span></b><small>Hajj Expo</small></span></a>
+      <a class="ph" href="img/igf-certificate.jpg" target="_blank" rel="noopener"><img src="img/igf-certificate.jpg" alt="Excellence-stage recognition at the Digital Government Forum" loading="lazy"><span class="cap"><b><span class="ar">تكريم مرحلة الإبداع في ملتقى الحكومة الرقمية</span><span class="en">Excellence-stage recognition at the Digital Government Forum</span></b><small>IGF</small></span></a>
+      <a class="ph" href="img/mediahub-pilgrim.jpg" target="_blank" rel="noopener"><img src="img/mediahub-pilgrim.jpg" alt="Presenting the ministry's digital services to pilgrims" loading="lazy"><span class="cap"><b><span class="ar">عرض خدمات الوزارة الرقمية للحجاج</span><span class="en">Presenting the ministry's digital services to pilgrims</span></b><small>Hajj Media Hub</small></span></a>
+      <a class="ph" href="img/pdt-stage.jpg" target="_blank" rel="noopener"><img src="img/pdt-stage.jpg" alt="Recognized by the Planning & Digital Transformation Agency" loading="lazy"><span class="cap"><b><span class="ar">تكريم من وكالة التخطيط والتحول الرقمي</span><span class="en">Recognized by the Planning & Digital Transformation Agency</span></b><small>2025</small></span></a>
+      <a class="ph" href="img/mediahub-officials.jpg" target="_blank" rel="noopener"><img src="img/mediahub-officials.jpg" alt="Briefing officials on the ministry's digital services" loading="lazy"><span class="cap"><b><span class="ar">عرض الخدمات الرقمية للمسؤولين</span><span class="en">Briefing officials on the ministry's digital services</span></b><small>Hajj Media Hub</small></span></a>
+      <a class="ph" href="img/igf-team.jpg" target="_blank" rel="noopener"><img src="img/igf-team.jpg" alt="With the ministry team at the Digital Government Forum" loading="lazy"><span class="cap"><b><span class="ar">مع فريق الوزارة في ملتقى الحكومة الرقمية</span><span class="en">With the ministry team at the Digital Government Forum</span></b><small>IGF</small></span></a>
+      <a class="ph" href="img/socpa-hackathon.jpg" target="_blank" rel="noopener"><img src="img/socpa-hackathon.jpg" alt="Team at the SOCPA Accounting Solutions Hackathon" loading="lazy"><span class="cap"><b><span class="ar">وصلنا للنهائي في هاكاثون الحلول المحاسبية بمنصة ProCount الذكية للاستعداد لزمالة سوكبا</span><span class="en">Hackathon finalists with ProCount, a smart prep platform for the SOCPA fellowship exam</span></b><small>SOCPA Hackathon · 2025</small></span></a>
+    </div>
+    <h3 class="sub"><span class="ar">شهادات شكر</span><span class="en">Letters of appreciation</span></h3>
+    <div class="letters">
+      <a href="img/letter-hajj1445.jpg" target="_blank" rel="noopener"><img src="img/letter-hajj1445.jpg" alt="Thank-you letter from H.E. the Minister, Hajj 1445" loading="lazy"><span><span class="ar">شهادة شكر من معالي الوزير، حج 1445</span><span class="en">Thank-you letter from H.E. the Minister, Hajj 1445</span></span></a>
+      <a href="img/letter-nusuk.jpg" target="_blank" rel="noopener"><img src="img/letter-nusuk.jpg" alt="Thank-you from the Nusuk Card project" loading="lazy"><span><span class="ar">شكر من مشروع بطاقة نسك</span><span class="en">Thank-you from the Nusuk Card project</span></span></a>
+      <a href="img/letter-pdt.jpg" target="_blank" rel="noopener"><img src="img/letter-pdt.jpg" alt="Certificate of appreciation, Planning & Digital Transformation Agency" loading="lazy"><span><span class="ar">شهادة شكر وتقدير، وكالة التخطيط والتحول الرقمي</span><span class="en">Certificate of appreciation, Planning & Digital Transformation Agency</span></span></a>
+    </div>
+    <h3 class="sub"><span class="ar">جوائز</span><span class="en">Awards</span></h3>
+    <ul class="awards">
+      <li><span>2026</span><span class="ar">أفضل جهة حكومية متميزة رقمياً، جائزة الحكومة الرقمية الخليجية (قدت ملف الترشيح)</span><span class="en">Best Digitally Distinguished Government Institution, GCC Digital Government Award (led the submission)</span></li>
+      <li><span>2026</span><span class="ar">عضوة، سفراء التميز البحثي المعزز بالذكاء الاصطناعي، الدفعة الأولى</span><span class="en">Member, AI-Augmented Research Excellence Ambassadors, first cohort</span></li>
+      <li><span>2025</span><span class="ar">أفضل مشروع أثر اجتماعي، جوائز القمة العالمية، منظومة نسك (قدت ملف الترشيح)</span><span class="en">Best Social Impact Project, World Summit Awards, Nusuk ecosystem (led the submission)</span></li>
+      <li><span>2025</span><span class="ar">متأهلة للنهائي، هاكاثون الحلول المحاسبية (سوكبا): شاركت في بناء ProCount، منصة استعداد ذكية ومخصصة لاختبار الزمالة</span><span class="en">Finalist, Accounting Solutions Hackathon (SOCPA): co-built ProCount, a personalized smart prep platform for the fellowship exam</span></li>
+      <li><span>2023</span><span class="ar">المركز الثاني، مسابقة أطروحة الثلاث دقائق، جامعة الملك عبدالعزيز</span><span class="en">2nd place, Three Minute Thesis, King Abdulaziz University</span></li>
+      <li><span>2022</span><span class="ar">المركز الأول، مسابقة مشاريع الرؤية الحاسوبية، جامعة الملك عبدالعزيز</span><span class="en">1st place, Computer Vision Projects Competition, King Abdulaziz University</span></li>
+    </ul>
+
+    <div class="stations">
+      <div class="station"><h4><span class="ar">أنظمة التصميم الوطنية</span><span class="en">National design system</span></h4><p class="ar">شاركت في تصميم 45 أيقونة محلية اعتُمدت في مكتبة كود المنصات الرقمية لهيئة الحكومة الرقمية، وقدت مواءمة منصات نسك مع الكود حتى شهادة امتثال نسك عمرة 2025.</p><p class="en">Co-designed 45 localized icons adopted into the DGA Platform Code library, and led Nusuk's alignment with the code through to a compliance certificate for Nusuk Umrah (2025).</p></div>
+      <div class="station"><h4><span class="ar">من البحث إلى الإنسان</span><span class="en">From research to people</span></h4><p class="ar">خمس أوراق علمية محكّمة، منها اثنتان في مجلات Q1، عن نماذج الرؤية الحاسوبية لتشخيص التوحد من صور الرنين المغناطيسي، وحدود تفسير الذكاء الاصطناعي في الاستخدام السريري.</p><p class="en">Five peer-reviewed papers, two in Q1 journals, on computer-vision models for autism diagnosis from MRI and the limits of AI explainability in clinical use.</p></div>
+      <div class="station"><h4><span class="ar">الذكاء الاصطناعي حيث يفيد</span><span class="en">AI where it helps</span></h4><p class="ar">قيّمت أكثر من 25 مقترح تقني لخدمات الحج والعمرة، وحددت حالات استخدام الذكاء الاصطناعي لمساعد رقمي موحّد بناءً على احتياجات المستخدمين والجهات.</p><p class="en">Evaluated 25+ technology proposals for Hajj and Umrah services and defined AI use cases for a proposed Unified Digital Assistant, based on user and stakeholder needs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="in">
+    <div class="head">
+      <div class="label"><span class="ar">كيف أضيف لفريقك</span><span class="en">What I bring</span></div>
+      <h2><span class="ar">وش أقدر أسوي معكم؟</span><span class="en">What can we do together?</span></h2>
+    </div>
+    <div class="svc">
+      <div><h4><span class="ar">أبحاث المستخدم</span><span class="en">UX research</span></h4><p class="ar">مقابلات واستبيانات واختبارات قابلية استخدام، بإشراف أو بدونه، تتحول إلى قرارات واضحة.</p><p class="en">Interviews, surveys and moderated or unmoderated usability tests, turned into clear decisions.</p></div>
+      <div><h4><span class="ar">استراتيجية التجربة</span><span class="en">UX strategy</span></h4><p class="ar">أربط احتياج المستخدم بأهداف الجهة، وأحدد الأولويات وأقيس الأثر.</p><p class="en">Connecting user needs to organizational goals, setting priorities and measuring impact.</p></div>
+      <div><h4><span class="ar">رحلات المستخدم وتصميم الخدمات</span><span class="en">Journeys and service design</span></h4><p class="ar">أرسم الرحلة كاملة عبر المنصات والقنوات، وألقى وين تنكسر التجربة.</p><p class="en">Mapping the full journey across platforms and channels to find where the experience breaks.</p></div>
+      <div><h4><span class="ar">ذكاء اصطناعي متمحور حول الإنسان</span><span class="en">Human-centered AI</span></h4><p class="ar">أحدد حالات الاستخدام المفيدة فعلاً، وأصمم مساعدات وسير عمل ذكية تخدم الناس.</p><p class="en">Finding AI use cases that actually help, and designing assistants and workflows around people.</p></div>
+      <div><h4><span class="ar">الإتاحة والتصميم الشامل</span><span class="en">Accessibility</span></h4><p class="ar">دراسة احتياجات ذوي الإعاقة واختيار الحلول المساعدة المناسبة.</p><p class="en">Studying the needs of people with disabilities and choosing the right assistive solutions.</p></div>
+      <div><h4><span class="ar">أنظمة التصميم والحوكمة</span><span class="en">Design systems and governance</span></h4><p class="ar">مواءمة المنصات مع كود المنصات الرقمية، وبناء مسارات حوكمة لإطلاق الخدمات.</p><p class="en">Aligning platforms with the DGA Platform Code and building governance for service launches.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="early">
+  <div class="in">
+    <div class="head">
+      <div class="label"><span class="ar">البدايات · 2021</span><span class="en">Early work · 2021</span></div>
+      <h2><span class="ar">دراسات حالة من التدريب.</span><span class="en">Training case studies.</span></h2>
+      <p><span class="ar">مشاريع من برنامج تصميم تجربة المستخدم مع Udacity ومسك، منشورة كاملة على Behance وMedium.</span><span class="en">Projects from my UX design training with Udacity and Misk, written up on Behance and Medium.</span></p>
+    </div>
+    <div class="early">
+      <a class="idx" href="https://www.behance.net/gallery/191581945/Tourism-App-UXUI-design" target="_blank" rel="noopener"><div><h3><span class="ar">تطبيق سياحي للأحساء</span><span class="en">Al-Ahsa tourism app</span></h3><small>Behance</small></div><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="idx" href="https://www.behance.net/gallery/188247195/UXUI-case-study-shopping-App-redesign" target="_blank" rel="noopener"><div><h3><span class="ar">إعادة تصميم تطبيق تسوق</span><span class="en">Shopping app redesign</span></h3><small>Behance</small></div><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="idx" href="https://www.behance.net/gallery/191473957/Fast-challenge-Gifts-website-UX-UI-case-study" target="_blank" rel="noopener"><div><h3><span class="ar">متجر هدايا "لها"</span><span class="en">Laha gift shop</span></h3><small>Behance</small></div><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="idx" href="https://www.behance.net/gallery/191488833/Udacity-Caffe-App-UX-case-study" target="_blank" rel="noopener"><div><h3><span class="ar">تطبيق طلبات مقهى</span><span class="en">Café ordering app</span></h3><small>Behance</small></div><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="idx" href="https://www.behance.net/gallery/123176587/Otaku-Hub" target="_blank" rel="noopener"><div><h3>Otaku Hub</h3><small>Behance</small></div><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="idx" href="https://reembahathiq.medium.com/" target="_blank" rel="noopener"><div><h3><span class="ar">تطبيق نمط حياة صحي</span><span class="en">Healthy lifestyle app</span></h3><small>Medium</small></div><span class="arrow" aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="contact" id="contact">
+  <div class="in">
+    <h2><span class="ar">خلّنا نتكلم.</span><span class="en">Let's talk.</span></h2>
+    <p><span class="ar">متاحة لفرص استراتيجية وأبحاث تجربة المستخدم والذكاء الاصطناعي المتمحور حول الإنسان.</span><span class="en">Open to UX strategy, UX research and human-centered AI roles.</span></p>
+    <div class="rows">
+      <div class="row"><span><span class="ar">البريد</span><span class="en">Email</span></span><b id="mail">reembahathiq@gmail.com</b><button class="copy" id="copyBtn" type="button"><span class="ar">نسخ</span><span class="en">Copy</span></button></div>
+      <a class="row" href="https://sa.linkedin.com/in/reem-bahathiq-ab4080147" target="_blank" rel="noopener"><span>LinkedIn</span><b>reem-bahathiq ↗</b></a>
+      <a class="row" href="https://www.behance.net/reem_bahathiq" target="_blank" rel="noopener"><span>Behance</span><b>reem_bahathiq ↗</b></a>
+      <a class="row" href="https://www.figma.com/@rorita" target="_blank" rel="noopener"><span>Figma</span><b>@rorita ↗</b></a>
+      <a class="row" href="https://reembahathiq.medium.com/" target="_blank" rel="noopener"><span>Medium</span><b>reembahathiq ↗</b></a>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="in">
+    <span><span class="ar">ريم باحاذق · مكة المكرمة</span><span class="en">Reem Bahathiq · Makkah</span></span>
+    <a href="#top"><span class="ar">للأعلى ↑</span><span class="en">Back to top ↑</span></a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('langBtn');
+  function set(l){
+    root.lang=l; root.dir=(l==='ar')?'rtl':'ltr';
+    btn.textContent=(l==='ar')?'EN':'عربي';
+    try{localStorage.setItem('rb-lang2',l)}catch(e){}
+  }
+  var saved=null; try{saved=localStorage.getItem('rb-lang2')}catch(e){}
+  set(saved==='ar'?'ar':'en');
+  btn.addEventListener('click',function(){set(root.lang==='ar'?'en':'ar')});
+  var top=document.querySelector('.top');
+  var onScroll=function(){top.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var c=document.getElementById('copyBtn');
+  c.addEventListener('click',function(){
+    var t=document.getElementById('mail').textContent;
+    var done=function(){var o=c.innerHTML;c.textContent=(root.lang==='ar')?'تم النسخ':'Copied';setTimeout(function(){c.innerHTML=o},1600)};
+    try{navigator.clipboard.writeText(t).then(done,function(){sel()})}catch(e){sel()}
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r)}
+  });
+})();
+</script>
+
+</body>
+</html>
